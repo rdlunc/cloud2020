@@ -10,6 +10,10 @@ spring:
     url: jdbc:mysql://localhost:3306/db2020?useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
     password: root
+  devtools:
+    restart:
+      poll-interval: 3000ms
+      quiet-period: 2999ms
 
 mybatis:
   mapperLocations: classpath:mapper/*.xml
