@@ -32,7 +32,7 @@ public class PaymentController {
             return new CommonResult(200,"插入成功, serverPort: " + serverPort, result);
         }
         else {
-            return new CommonResult(500,"插入失败", result);
+            return new CommonResult(500,"插入失败",result);
         }
     }
 
