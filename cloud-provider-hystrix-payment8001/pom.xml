@@ -34,7 +34,8 @@
         <!-- 引入自己定义的api通用包，可以使用Payment支付Entity -->
         <dependency>
             <groupId>com.rongda.springcloud</groupId>
-            <artifactId>cloud-provider-payment8002</artifactId>
+            <artifactId>cloud-api-commons</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
