@@ -21,6 +21,19 @@ spring:
           uri: lb://CLOUD-PAYMENT-SERVICE  #匹配后提供的路由地址
           predicates:
           - Path=/payment/lb/**   #断言，路径相匹配的进行路由
+          #- After=2021-02-20T18:21:16.899+08:00[Asia/Shanghai]   #断言，路径相匹配的进行路由
+          #- Before=2021-02-21T22:17:10.689+08:00[Asia/Shanghai]  #断言，路径相匹配的进行路由
+          #- Between=2021-02-20T18:21:16.899+08:00[Asia/Shanghai], 2021-02-21T22:17:10.689+08:00[Asia/Shanghai]
+          #- Cookie=username, rongda
+          #- Header=X-Request-Id, \d+  #请求头要有X-Request-Id属性并且值为整数的正则表达式
+          #- Host=**.rongda.com
+          #- Method=GET
+          #- Query=username, \d+  #要有参数名username并且值还要是整数才能路由
+
+         #id: 我们自定义的路由ID，保持唯一
+          ##uri: 目标服务地址
+          ##predicates: 路由条件，Predicate接受一个输入参数返回一个布尔值。
+          ##            该属性包含多种默认方法来将Predicate组合成其他复杂的逻辑（比如：与、或、非）。
 
 eureka:
   instance:
