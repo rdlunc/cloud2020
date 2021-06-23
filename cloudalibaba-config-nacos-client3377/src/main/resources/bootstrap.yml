@@ -14,4 +14,4 @@ spring:
         file-extension: yaml #指定yaml格式的配置
 
 # ${spring.application.name}-${spring.profile.active}.${spring.cloud.nacos.config.file-extension}
-# nacos-config-client-dev.yml
+# nacos-config-client-dev.yaml
