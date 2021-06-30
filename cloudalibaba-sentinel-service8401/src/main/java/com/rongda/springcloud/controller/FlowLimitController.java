@@ -31,4 +31,17 @@ public class FlowLimitController {
         return "------------> testB";
     }
 
+    @GetMapping("/testD")
+    public String testD(){
+        //暂停1秒
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        log.info("=========> testD 测试RT");
+        return "------------> testD";
+    }
+
 }
