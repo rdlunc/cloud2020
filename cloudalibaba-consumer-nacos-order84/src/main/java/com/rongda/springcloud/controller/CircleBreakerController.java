@@ -27,8 +27,17 @@ public class CircleBreakerController {
     private RestTemplate restTemplate;
 
     @RequestMapping("/consumer/fallback/{id}")
+    @SentinelResource(value = "fallback") //没有配置
     public CommonResult<Payment> fallback(@PathVariable("id") Long id){
         CommonResult result = restTemplate.getForObject(serverURL + "/paymentSQL/" + id, CommonResult.class, id);
+
+        if(id == 4){
+            throw new IllegalArgumentException("IllegalArgumentException, 非法参数异常......");
+
+        } else if(result.getData() == null){
+            throw new NullPointerException("NullPointerException, 该ID没有对应记录，空指针异常.");
+        }
+
         return result;
     }
 
